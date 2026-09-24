@@ -1,0 +1,36 @@
+{
+  "document_kind": "bind_request",
+  "contract": "openteams/satisfier-binding [0.1-draft]",
+  "request_id": "request-cog-typesafe",
+  "binding_id": "binding-jev",
+  "revision": 1,
+  "provider": {
+    "id": "openteams/cog-typesafe",
+    "version": "0.1.0"
+  },
+  "requirement": {
+    "id": "system-one-decisions",
+    "capability": "system-one/decisions",
+    "accepted_compositions": [
+      "model+harness"
+    ],
+    "features": [
+      "choice",
+      "noul",
+      "score"
+    ],
+    "model_id": "jev-1.13.0",
+    "allowed_localities": [
+      "cloud"
+    ],
+    "evidence_level": "declaration",
+    "identity_verified": false,
+    "revision_pinned": false
+  },
+  "configuration": {
+    "model_id": "jev-1.13.0"
+  },
+  "credential_refs": {
+    "api_key": "env:TYPESAFE_API_KEY"
+  }
+}

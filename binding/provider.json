@@ -1,0 +1,42 @@
+{
+  "document_kind": "provider",
+  "contract": "openteams/satisfier-binding [0.1-draft]",
+  "provider": {
+    "id": "openteams/cog-typesafe",
+    "version": "0.1.0"
+  },
+  "capability": "system-one/decisions",
+  "compositions": [
+    "model+harness"
+  ],
+  "binding_interface": "bind",
+  "configuration_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "model_id": {
+        "type": "string",
+        "pattern": "^jev-[0-9]+\\.[0-9]+\\.[0-9]+$",
+        "description": "Versioned Jev model ID, e.g. jev-1.13.0. Aliases (jev-latest, jev-preview) move when TypeSafe ships and are refused."
+      }
+    },
+    "required": [
+      "model_id"
+    ]
+  },
+  "model_requirement": null,
+  "credential_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "api_key"
+    ],
+    "properties": {
+      "api_key": {
+        "const": "env:TYPESAFE_API_KEY"
+      }
+    }
+  }
+}

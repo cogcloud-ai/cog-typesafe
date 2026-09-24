@@ -1,0 +1,22 @@
+[workspace]
+license = "Apache-2.0"
+name = "cog-typesafe"
+version = "0.1.0"
+description = "TypeSafe Jev System One model as a system-one/decisions provider Cog."
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64"]
+
+[dependencies]
+python = ">=3.11"
+pyyaml = "*"
+jsonschema = "*"
+
+[tasks]
+turn = "python src/typesafe_runtime.py turn"
+bind = "python src/typesafe_runtime.py bind"
+card = "python src/typesafe_runtime.py card"
+check = "python src/typesafe_runtime.py check"
+models = "python src/typesafe_runtime.py models"
+probe = "python src/typesafe_runtime.py probe"
+validate = "python src/typesafe_runtime.py validate"
+test = "python -m unittest discover -s tests -v"
